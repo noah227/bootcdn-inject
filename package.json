@@ -1,0 +1,63 @@
+{
+    "id": "noahyoung-hx-bootcdn-inject",
+    "name": "hx-bootcdn-inject",
+    "description": "",
+    "displayName": "bootcdn注入",
+    "version": "1.0.0",
+    "publisher": "Noah Young",
+    "engines": {
+        "HBuilderX": "^3.2.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "scripts": {
+        "build:pick": "rollup -c rollup.config.js"
+    },
+    "main": "./extension",
+    "keywords": [
+        "bootcdn",
+        "cdn"
+    ],
+    "activationEvents": [
+        "onCommand:extension.bootcdnInject"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.bootcdnInject",
+                "title": "bootcdn注入"
+            },
+            {
+                "command": "extension.bootcdnInjectGUI",
+                "title": "bootcdn注入 GUI"
+            }
+        ],
+        "menus": {
+            "editor/context": []
+        },
+        "keybindings": [
+            {
+                "key": "Ctrl+Shift+I",
+                "command": "extension.bootcdnInject",
+                "when": ""
+            }
+        ]
+    },
+    "extensionDependencies": [],
+    "dependencies": {
+        "axios": "^1.4.0",
+        "hx-vue-dist-loader": "^1.0.5"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^24.1.0",
+        "@rollup/plugin-node-resolve": "^15.0.2",
+        "@rollup/plugin-terser": "^0.4.3",
+        "@rollup/plugin-typescript": "^11.1.0",
+        "@types/node": "^20.3.3",
+        "fs-extra": "^11.1.1",
+        "rollup": "^3.23.0",
+        "tslib": "^2.5.2",
+        "typescript": "^5.0.4"
+    }
+}
